@@ -1,0 +1,134 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+//font awesome imports xD
+@import "../assets/scss/fontawesome.scss";
+@import "../assets/scss/solid.scss";
+@import "../assets/scss/brands.scss";
+
+
+.user {
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-user);
+  }
+}
+
+.twitter {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}
+
+
+
+
+// Variables
+// --------------------------
+
+$fa-sass-asset-helper: false !default;
+
+$fa-font-path: if($fa-sass-asset-helper, "font-awesome", "../assets/scss/font-awesome") !default;
+
+$fa-font-size-base:           16px !default;
+$fa-css-prefix:               fa !default;
+$fa-version:                  "5.6.1" !default;
+$fa-border-color:             #eee !default;
+$fa-inverse:                  #fff !default;
+$fa-li-width:                 2em !default;
+$fa-fw-width:                 (20em / 16);
+
+// Convenience function used to set content property
+@function fa-content($fa-var) {
+  @return unquote("\"#{ $fa-var }\"");
+}
+
+$fa-var-500px: \f26e;
+$fa-var-accessible-icon: \f368;
+$fa-var-accusoft: \f369;
+$fa-var-acquisitions-incorporated: \f6af;
+$fa-var-ad: \f641;
+$fa-var-address-book: \f2b9;
+$fa-var-address-card: \f2bb;
+
+
+
+
+//ESTILO MENU ACORDION
+ /* Style the buttons that are used to open and close the accordion panel */
+ .accordion {
+    background-color: #d2e2c291;
+    color: #444;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-top: none;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: rgb(122, 189, 84);
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: rgba(168, 231, 97, 0.692);
+    display: none;
+    overflow: hidden;
+  } 
+
+  .info-usuario{
+    align-content: center;
+    strong{
+      font-size:1rem; 
+      color:grey;
+      float: left;
+    }
+    p{
+      font-size:1.2rem; 
+      color: #11a13c; 
+      margin: 0%;
+    }
+  }
+
+  .estado_car{
+    font-size:10px; 
+    color:grey;
+    
+  }
+
+  
+
+  
+
+
+
+
+
+
+
+

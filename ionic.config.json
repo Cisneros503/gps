@@ -1,0 +1,7 @@
+{
+  "name": "ubica",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,178 @@
+<ion-menu [content]="content">
+  <ion-header >
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+      
+    </ion-toolbar>
+    
+  </ion-header> 
+
+
+  
+  <ion-content >
+      
+      
+      <!--<button color="primary" menuToggle (click)="iraDetRastreador()" hidden>
+          PROBAR
+        </button>-->
+
+    <ion-list>
+        
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3 >
+            <img no-lines src="../../assets/imgs/logoUbica.jpg">
+          </ion-col>
+          <ion-col col-9 class="info-usuario" >
+              <strong>Id: </strong><p> &nbsp;Guillermo Contreras</p>
+              <strong>Empresa:</strong><p>&nbsp;SV00-Ubica GPS El Salvador</p>
+              <p>03/19/2018 03:10PM</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        
+      <button  class="accordion" (click)="show('filtros')" hidden>
+        <div item-start style="background-color: rgba(224, 19, 19, 0.904); float: left;">&nbsp; &nbsp;</div>
+        &nbsp; Filtrar
+      </button>
+      
+      <ion-grid style="vertical-align: middle; padding:0!important;" *ngIf="filtros">
+          <ion-row color="primary" style="padding:1px !important; margin:1px; ">      
+              <div style="vertical-align: middle; padding:0!important;" col-6 color="primary" no-lines>
+                  <ion-label style="float: left">
+                    <ion-checkbox ></ion-checkbox>&nbsp; todos
+                  </ion-label>
+                  
+                </div>
+              <div col-3 (click)="show('buscar_vehiculos')" style="vertical-align: middle; padding:0!important;">
+                  <button ion-button>
+                      <ion-icon name="ios-search-outline"></ion-icon>
+                  </button>
+                </div>
+              
+              <div col-3 style="vertical-align: middle; padding:0!important; margin:0!important;">
+                  <button ion-button (click)="alerta()">
+                      <ion-icon name="ios-funnel-outline" ></ion-icon>
+                  </button>
+                </div>
+              
+          </ion-row>
+          <ion-toolbar *ngIf="buscar_vehiculos" color="primary" style="padding:0;">
+              <ion-searchbar animated="true"
+                [(ngModel)]="myInput"
+                [showCancelButton]="shouldShowCancel"
+                (ionInput)="onInput($event)"
+                (ionCancel)="onCancel($event)"
+                placeholder="Vehiculos"
+                > 
+              </ion-searchbar>
+            </ion-toolbar>
+        </ion-grid>     
+
+        
+            
+            
+      
+
+        
+
+      <button (click)="show('verOfi')" class="accordion" >
+        <div item-start style="background-color: green; float: left;">&nbsp; &nbsp;</div>
+        &nbsp; Oficina</button>
+      
+      <!--despliego los vehiculos en el grupo oficina con *ngIf-->
+      <div *ngIf="verOfi">
+        <hr>
+          <ion-grid style="vertical-align: middle; padding:0!important;">
+              <ion-row color="primary" style="padding:1px !important; vertical-align: middle; margin-top: 1px;; " *ngFor="let c of ar_car" >      
+                  <div style="vertical-align: middle; padding:0!important;" col-2 color="primary" no-lines>
+                        <ion-checkbox ></ion-checkbox>&nbsp; 
+                  </div>
+                  <div col-7 style="vertical-align: middle; padding:0!important;">
+                      <!--{{c.placa}}--> 
+                      {{c.nombre}}
+                      
+                    </div>
+                  
+                  <div col-3 style="vertical-align: middle; text-align: center; padding:0!important; margin:0!important;">
+                      <ion-icon item-end style="text-align: center;" name="ios-speedometer" color="musk"></ion-icon>
+                    <br><strong class="estado_car">{{c.estado}}</strong>
+                    </div>
+                    
+              </ion-row>
+            </ion-grid> 
+      </div>
+          
+      <button (click)="show('verCasa')" class="accordion" no-lines >
+          <div item-start style="background-color: rgba(242, 255, 62, 0.986); float: left;">&nbsp; &nbsp;</div>
+          &nbsp; Paginas</button>
+        
+        
+        <div *ngIf="verCasa" >
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                {{p.title}}
+              </button>
+        </div>
+        
+        <button ion-item >
+          <ion-icon name="ios-chatboxes-outline" item-start></ion-icon>        
+          <div class="item-note" >
+              Chat Con Soporte
+          </div>
+        </button>
+        <button ion-item >
+          <ion-icon name="ios-pin-outline" item-start></ion-icon>        
+          <div class="item-note" >
+              Zonas Fijas
+          </div>
+        </button>
+        <button ion-item menuToggle > <!--(click)="iraAjustes()"-->
+            <ion-icon name="md-settings" item-start></ion-icon>        
+            <div class="item-note" >
+                Ajustes
+            </div>
+          </button>
+          <button ion-item menuToggle (click)="iraLogin()">
+              <ion-icon name="md-power" item-start></ion-icon>
+                     
+              <div class="item-note" >
+                  Salir
+              </div>
+            </button>
+      
+      
+
+    </ion-list>
+
+    
+
+    
+
+
+  </ion-content>
+
+</ion-menu>
+
+<ion-menu id="rightMenu" [content]="content2" side="right" type="reveal">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Items</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <button ion-item >Item UNO</button>
+        <button ion-item >Item DOS</button>
+      </ion-list>
+      <ion-card *ngIf="text">
+        <ion-card-content>
+          Tu has pulsado 
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-menu>
+
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

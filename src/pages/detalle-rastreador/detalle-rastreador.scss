@@ -1,0 +1,59 @@
+
+//font awesome imports xD
+@import "../../assets/scss/fontawesome.scss";
+@import "../../assets/scss/solid.scss";
+@import "../../assets/scss/brands.scss";
+
+page-detalle-rastreador {
+    .img_carro{
+        margin: 0 auto;
+        height: 90px;
+        width: 90px;
+        float: right;
+    }
+
+    .img_usr{
+        margin: 0 auto;
+        height: 60px;
+        width: 90px;
+        float: right;
+    }
+
+    .iconos{
+        text-align: center;
+        color: rgb(82, 76, 76);
+    }
+    .texto{
+        text-align: left;
+        font-size: 1.2rem;
+        
+    }
+}
+
+// Variables
+// --------------------------
+
+$fa-sass-asset-helper: false !default;
+
+$fa-font-path: if($fa-sass-asset-helper, "font-awesome", "../assets/scss/font-awesome") !default;
+
+$fa-font-size-base:           16px !default;
+$fa-css-prefix:               fa !default;
+$fa-version:                  "5.6.1" !default;
+$fa-border-color:             #eee !default;
+$fa-inverse:                  #fff !default;
+$fa-li-width:                 2em !default;
+$fa-fw-width:                 (20em / 16);
+
+// Convenience function used to set content property
+@function fa-content($fa-var) {
+  @return unquote("\"#{ $fa-var }\"");
+}
+
+$fa-var-500px: \f26e;
+$fa-var-accessible-icon: \f368;
+$fa-var-accusoft: \f369;
+$fa-var-acquisitions-incorporated: \f6af;
+$fa-var-ad: \f641;
+$fa-var-address-book: \f2b9;
+$fa-var-address-card: \f2bb;

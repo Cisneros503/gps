@@ -1,0 +1,46 @@
+<ion-header>
+  
+  
+    <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-toolbar color="primary">
+      <div>
+          <ion-searchbar animated="true"
+          [(ngModel)]="myInput"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="onInput($event)"
+          (ionCancel)="onCancel($event)"
+          placeholder="Vehiculos">
+        </ion-searchbar>      
+      </div>
+    </ion-toolbar>
+  </ion-navbar>
+  
+
+
+      
+    
+  
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-start ></ion-icon>
+      <!--{{item.title}}-->PLACA
+      <div class="item-note" >
+        {{item.note}}
+      </div>
+      <div item-end style="text-align: center;">
+          <ion-icon name="ios-speedometer" color="musk"></ion-icon>
+          <p>23km/h</p>
+      </div>
+      
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>

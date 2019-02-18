@@ -1,0 +1,38 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-title>Login<!--{{ 'HELLO' | translate }}--></ion-title>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+        <ion-item text-center style="vertical-align: middle; " no-lines>
+          <ion-img no-lines center src="../../assets/imgs/logoUbica.jpg"  ></ion-img>      
+        </ion-item>
+        
+        <ion-item>
+          <ion-input style="position: static !important;" ng-model="email" name="email"  type="text" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input ng-model="psw" name="psw" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+        <ion-item no-lines>
+            <button style="background-color: white; " (click)="recordar()" secondary clear item-right >
+                Recordar Contraseña
+            </button>
+        </ion-item >
+            
+        
+        <ion-item no-lines>
+          <button menuToggle block ion-button  style="height: 40px;"  color="primary" > Iniciar Sesion </button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
