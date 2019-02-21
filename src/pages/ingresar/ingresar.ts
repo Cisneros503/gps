@@ -1,5 +1,8 @@
+
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Nav, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the IngresarPage page.
@@ -13,13 +16,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-ingresar',
   templateUrl: 'ingresar.html',
 })
+
 export class IngresarPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public nav: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IngresarPage');
   }
+
+  
+  recuperar(){
+    const confirm = this.alertCtrl.create({
+      title: 'Realizado!',
+      message: 'Puedes verificar en tu bandeja de entrada el correo de recuperacion',
+      buttons: [
+        {
+          text: 'ir a login',
+          handler: () => {
+            this.iraLogin();
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+  
+  iraLogin(){ 
+    this.nav.setRoot(LoginPage);
+  }
+
 
 }

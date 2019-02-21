@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { RecuperarPage } from '../recuperar/recuperar'
+import { IngresarPage } from '../ingresar/ingresar'
 //import { TranslateService } from '@ngx-translate/core';
 
 
@@ -29,8 +29,7 @@ export class LoginPage {
 
   
   recordar() {
-    console.log("si lo llama");
-    this.navCtrl.push(RecuperarPage);
+    this.navCtrl.push(IngresarPage);
   }
 
 }

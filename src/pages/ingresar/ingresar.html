@@ -4,39 +4,21 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
 
-  <ion-navbar>
-    <ion-title>ingresar</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
 <ion-content padding>
+  <br><br><br>
   <ion-list>
-    <ion-item text-center style="vertical-align: middle;" no-lines>
-      <ion-img no-lines center src="../../assets/imgs/Logo.png" style="width: 160px; height: 140px; " ></ion-img>      
+    <ion-item class="logo" no-lines>
     </ion-item>
-    <p> 
-      <!--traduccion: {{ 'HELLO' | translate }}-->
-      Ingresar
-    </p>
+    
     <ion-item>
-      <ion-input style="position: static !important;" ng-model="email" name="email"  type="text" placeholder="Email"></ion-input>
+      <ion-input style="position: static !important;" ng-model="email" name="email"  type="text" placeholder="correo de recuperacion"></ion-input>
     </ion-item>
-    <ion-item>
-        <ion-input ng-model="psw" name="psw" type="password" placeholder="Contraseña"></ion-input>
-    </ion-item>
-    <ion-item no-lines>
-        <button style="background-color: white; " (click)="recordar()" secondary clear item-right >
-            Recordar Contraseña
-        </button>
-    </ion-item >
-        
     
     <ion-item no-lines>
-      <button menuToggle block ion-button  style="height: 40px;"  color="primary" > Iniciar Sesion </button>
+      <button (click)="recuperar()" block ion-button  style="height: 40px;"  color="primary" > Recuperar </button>
     </ion-item>
 </ion-list>
 

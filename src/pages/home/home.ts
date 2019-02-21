@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, ShowWhen } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',

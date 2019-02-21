@@ -27,8 +27,8 @@ import { IngresarPage } from '../pages/ingresar/ingresar';
 export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = HomePage;
+  //se define un rootPage para darle uso al NavController
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -105,6 +105,11 @@ export class MyApp {
   iraLogin(){
     //console.log("Prueba"); 
     this.nav.setRoot(LoginPage);
+  }
+
+  iraMapa(){
+    //console.log("Prueba"); 
+    this.nav.setRoot(HomePage);
   }
 
   iraAjustes(){
